@@ -16,7 +16,7 @@ export default function LanguageComp() {
           radius="none"
           className="h-12 text-white bg-DarkPrimary capitalize hover:border-white border-transparent border-2 transition"
         >
-          <i class="bi bi-flag-fill"></i>EN<i class="bi bi-caret-down-fill"></i>
+          <i className="bi bi-flag-fill"></i>EN<i className="bi bi-caret-down-fill"></i>
         </Button>
       </PopoverTrigger>
       hellooooo

@@ -20,7 +20,7 @@ export default function DetailsOption() {
             <span>Hello, Jaswinder</span>
             <span>Accounts & Lists</span>
           </div>
-          <i class="bi bi-caret-down-fill"></i>
+          <i className="bi bi-caret-down-fill"></i>
         </Button>
       </PopoverTrigger>
       hellooooo

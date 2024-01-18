@@ -1,3 +1,11 @@
 {
-  "Products": { "categories": ["all", "b", "c", "d", "e", "f", "g", "h", "i"] }
+  "Products": { "categories": ["all", "b", "c", "d", "e", "f", "g", "h", "i"] },
+  "Users": [
+    {
+      "username": "jass",
+      "email": "jass",
+      "password": "123",
+      "number": "1111111111"
+    }
+  ]
 }

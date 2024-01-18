@@ -16,7 +16,7 @@ export default function CategoryBar() {
           onClick={toggleDrawer}
           radius="none"
           size="sm"
-          startContent={<i class="bi bi-list"></i>}
+          startContent={<i className="bi bi-list"></i>}
         >
           All
         </Button>

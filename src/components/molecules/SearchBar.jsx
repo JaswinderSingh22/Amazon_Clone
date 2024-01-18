@@ -3,7 +3,6 @@ import React from "react";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import Products from "../../../data/data.json";
 export default function SearchBar() {
-  console.log("categories:", Products?.Products.categories);
   return (
     <div className="flex w-full gap-0 items-center justify-center  rounded-lg">
       <Select

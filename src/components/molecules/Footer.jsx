@@ -22,7 +22,7 @@ export default function Footer() {
           <a href="/">Twitter</a>
         </div>
         <div className="flex flex-col">
-          <div className="font-bold">Make Money with Us</div>
+          <div className="font-bold ">Make Money with Us</div>
           <a href="/">Sell on Amazon</a>
           <a href="/">Make Money with Us Sell on Amazon</a>
           <a href="/">Protect and Build Your Brand</a>
@@ -44,7 +44,12 @@ export default function Footer() {
       <hr className="solid"></hr>
       <div className="flex flex-col w-full p-5 bg-[#232F3E]">
         <div className="flex items-center justify-center">
-          <Image alt="logo" width={100} height={100} src="/amazon.png"></Image>
+          <Image
+            alt="logo"
+            width={100}
+            height={100}
+            src="/amazonfooter.png"
+          ></Image>
           <select
             name="language"
             defaultValue={"English"}
@@ -64,7 +69,7 @@ export default function Footer() {
       <div className="w-full bg-DarkPrimary text-white text-sm flex flex-wrap gap-x-72 gap-y-5  justify-center items-start p-6">
         {jsonData.footerData.map((data, index) => (
           <div key={index} className="flex flex-col items-start w-36">
-            <a href={data.link} className="font-bold">
+            <a href={data.link} className="font-bold whitespace-nowrap">
               {data.heading}
             </a>
             <p className="">{data.desc1}</p>

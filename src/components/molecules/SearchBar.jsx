@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Products } from "../../../data/data.json";
+import josnData from "../../../data/data.json";
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
   return (
@@ -11,7 +11,7 @@ export default function SearchBar() {
         defaultValue={"all"}
         className=" bg-slate-200 p-2 h-10 rounded-md rounded-e-none capitalize"
       >
-        {Products.categories.map((category, index) => (
+        {josnData.Products.categories.map((category, index) => (
           <option key={index} value={category}>
             {category}
           </option>

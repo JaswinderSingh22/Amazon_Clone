@@ -33,8 +33,8 @@ export default function Carousel({ carouselImages }) {
               <Image
                 src={image.path}
                 alt={`Slide ${index}`}
-                layout="fill"
-                objectFit="fill"
+                width={100}
+                height={100}
               />
             </div>
           ))}

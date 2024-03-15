@@ -10,7 +10,7 @@ export default function NavBarComp() {
       <div className="h-14 w-48 flex items-center hover:border-white border-transparent border-2 transition">
         <Image alt="logo" width={150} height={100} src="/amazon.png"></Image>
       </div>
-      <div className="text-xs flex items-center w-72 h-12 hover:border-white border-transparent border-2 transition">
+      <div className="text-xs flex items-center w-60 h-12 hover:border-white border-transparent border-2 transition justify-between">
         <i className="bi bi-geo-alt"></i>
         <div className="">
           <div>Deliver to Jaswinder</div>

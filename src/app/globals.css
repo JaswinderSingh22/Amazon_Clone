@@ -3,9 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body{
-    background-color: "#0F1111";
+body {
+  background-color: "#0F1111";
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .custom-border {

@@ -1,11 +1,10 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import React, { useState } from "react";
-import { catButtons } from "../../../data/data.json";
+import jsonData from "../../../data/data.json";
 
 export default function CategoryBar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -22,8 +21,8 @@ export default function CategoryBar() {
         >
           All
         </Button>
-        {catButtons &&
-          catButtons.map((btn, index) => (
+        {jsonData &&
+          jsonData.catButtons.map((btn, index) => (
             <Button
               key={index}
               className="bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-fit left-0 cursor-pointer p-2"

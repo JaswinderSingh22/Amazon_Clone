@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { countries } from "../../../data/data.json";
-
+import jsonData from "../../../data/data.json";
 export default function Footer() {
   return (
     <div className="w-full  bg-slate-600 flex flex-col items-start justify-center mt-5">
@@ -42,7 +41,7 @@ export default function Footer() {
           <a href="/">Help</a>
         </div>
       </div>
-      <hr class="solid"></hr>
+      <hr className="solid"></hr>
       <div className="flex flex-col w-full p-5 bg-[#232F3E]">
         <div className="flex items-center justify-center">
           <Image alt="logo" width={100} height={100} src="/amazon.png"></Image>
@@ -56,7 +55,32 @@ export default function Footer() {
             <option value="Hindi">Hindi</option>
           </select>
         </div>
-        <div></div>
+        <div className="w-3/4 m-auto flex gap-2 items-center flex-wrap justify-center text-white text-xs p-4">
+          {jsonData.countries.map((country, index) => (
+            <div key={index}>{country}</div>
+          ))}
+        </div>
+      </div>
+      <div className="w-full bg-DarkPrimary text-white text-sm flex flex-wrap gap-x-72 gap-y-5  justify-center items-start p-6">
+        {jsonData.footerData.map((data, index) => (
+          <div key={index} className="flex flex-col items-start w-36">
+            <a href={data.link} className="font-bold">
+              {data.heading}
+            </a>
+            <p className="">{data.desc1}</p>
+            <p className="">{data.desc2}</p>
+          </div>
+        ))}
+      </div>
+      <div className="w-full p-5 flex flex-col items-center bg-DarkPrimary text-white">
+        <div className="flex gap-5 text-small">
+          <a href="/">Conditions of use and sale</a>
+          <a href="/">Privacy Notice</a>
+          <a href="/">Interest-Based Ads</a>
+        </div>
+        <div className="text-sm">
+          © 1996-2024, Amazon.com, Inc. or its affiliates
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function RecentProduct({ product }) {
         {product &&
           product.map((pro, index) => (
             <div key={index}>
-              <Image width={100} height={100} src={pro.path} alt="Image" />
+              <Image width={120} height={100} src={pro.path} alt="Image" />
               <p>{pro.description}</p>
             </div>
           ))}

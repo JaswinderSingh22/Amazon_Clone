@@ -4,7 +4,6 @@ import SearchBar from "../molecules/SearchBar";
 import LanguageComp from "../molecules/LanguageComp";
 import DetailsOption from "../molecules/DetailsOption";
 
-
 export default function NavBarComp() {
   return (
     <div className="bg-DarkPrimary text-white w-full h-16 flex gap-3 items-center p-3 ">

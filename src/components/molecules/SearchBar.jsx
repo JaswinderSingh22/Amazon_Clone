@@ -1,31 +1,30 @@
 "use client";
-import React from "react";
-import { Button, Input, Select, SelectItem } from "@nextui-org/react";
-import Products from "../../../data/data.json";
+import React, { useState } from "react";
+import { Products } from "../../../data/data.json";
 export default function SearchBar() {
+  const [searchInput, setSearchInput] = useState("");
   return (
-    <div className="flex w-full gap-0 items-center justify-center  rounded-lg">
-      <Select
-        isRequired
-        defaultSelectedKeys={"all"}
-        radius="none"
-        className="w-12"
-        color="primary"
+    <div className="flex w-full gap-0 items-center justify-between text-black rounded-lg">
+      <select
+        name="products"
+        id="products"
+        defaultValue={"all"}
+        className=" bg-slate-200 p-2 h-10 rounded-md rounded-e-none capitalize"
       >
-        {Products.Products?.categories.map((category, index) => (
-          <SelectItem key={index} value={category}>
+        {Products.categories.map((category, index) => (
+          <option key={index} value={category}>
             {category}
-          </SelectItem>
+          </option>
         ))}
-      </Select>
-      <Input
-        radius="none"
+      </select>
+      <input
+        type="text"
         placeholder="Search Amazon.in"
-        aria-label="Categories"
+        className="flex-1 p-2 focus:border-orange-300"
       />
-      <Button radius="none" className="bg-[#f4cb43] h-14">
+      <button className="bg-orange-300 p-2 w-10 rounded-md rounded-s-none">
         <i className="bi bi-search"></i>
-      </Button>
+      </button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import React, { useState } from "react";
+import { catButtons } from "../../../data/data.json";
 
 export default function CategoryBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +9,12 @@ export default function CategoryBar() {
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <div className={`bg-BarGrey w-full shadow-lg`}>
-      <div className="flex w-full items-center justify-evenly whitespace-nowrap">
+    <div className={`bg-BarGrey w-full shadow-lg sticky`}>
+      <div className="flex items-center justify-evenly whitespace-nowrap ">
         <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-2 "
+          className="bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-2"
           onClick={toggleDrawer}
           radius="none"
           size="sm"
@@ -20,96 +22,24 @@ export default function CategoryBar() {
         >
           All
         </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-6 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Fresh
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-8 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Amazon Pay
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Prime
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Buy Again
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Todays deal
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Electronics
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Best sellers
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Fashion
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Amazon miniTV
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Sell
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Subscribe & Save
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Gift Cards
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0"
-          radius="none"
-        >
-          Amazon Business
-        </Button>
-        <Button
-          className=" bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-4 left-0 cursor-pointer p-0 "
-          radius="none"
-        >
-          New Launches from mobile , Electronics & more
-        </Button>
+        {catButtons &&
+          catButtons.map((btn, index) => (
+            <Button
+              key={index}
+              className="bg-BarGrey capitalize hover:border-white border-transparent border-2 transition text-white top-0 w-fit left-0 cursor-pointer p-2"
+              onClick={toggleDrawer}
+              radius="none"
+              size="sm"
+            >
+              {btn}
+            </Button>
+          ))}
       </div>
       {isOpen && (
         <div
-          className={`p-4 bg-blue-400 absolute left-0 top-0 h-[100vh] w-[400px] flex z-10 transition-transform duration-200 transform ${
-            isOpen ? "translate-x-[0px]" : "-translate-x-[0px]"
-          }`}
+          className={`p-4 bg-blue-400 absolute left-0 top-0 h-[100vh] w-[400px] flex z-10 transition-transform duration-800 transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } ease-in-out`}
         >
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus
